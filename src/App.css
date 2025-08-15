@@ -1,0 +1,187 @@
+body {
+  scroll-behavior: smooth;
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgb(9, 23, 77) 100%),
+    url("https://wallpapers.com/images/featured/desktop-aesthetic-background-p586yttyum8x64jq.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Top info */
+.top-info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px; 
+  padding: 30px 10px;
+  background: linear-gradient(to bottom, #621680, #a7149f); 
+  color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 49.4%);
+}
+.align-right{
+  text-align: right;
+} /* made this cause photo keeps staying away from text*/
+
+.top-info img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.top-info-inside {
+  color: white;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .top-info {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top-info img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .top-info-inside {
+    text-align: center;
+  }
+}
+
+/* Navigation */
+.custom-bar {
+  background: linear-gradient(to top, #3c0e77, #35044f);
+  color: white;
+}
+
+.nav-bring {
+  color: rgb(178, 45, 255);
+}
+
+.nav-item {
+  color: rgb(206, 127, 255);
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 200px 0;
+}
+
+.portfolio-card {
+  background: linear-gradient(to bottom, #0a1b5b, #82129d);
+  color: white;
+}
+
+.size-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 0;
+  background: linear-gradient(to bottom, #0a1b5b, #3c0e77);
+  background-color: rgb(9, 23, 77);
+  background-size: cover;
+}
+
+/* Project Card Hover Effect */
+.project-card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+.title-color {
+  color: rgb(204, 150, 255);
+}
+
+/* Form */
+.form-inst {
+  color: white;
+}
+
+.custom-button {
+  background-color: #ff6d9c;
+}
+
+/* Animation for text ( Should be a glitch effect ) */
+.glitch {
+  font-size: 3rem;
+  position: relative;
+  color: white;
+  animation: flicker 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: 'My Projects';
+  position: absolute;
+  left: 40%;
+  top: 0%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  color: rgb(234, 0, 255);
+  z-index: -1;
+  animation: glitchLeft 2s infinite;
+}
+
+.glitch::after {
+  color: rgb(0, 55, 255);
+  z-index: -1;
+  animation: glitchRight 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    transform: none;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+    transform: translate(1px, -1px);
+  }
+  26% {
+    opacity: 0.6;
+    transform: translate(-1px, 1px);
+  }
+}
+
+@keyframes glitchLeft {
+  0%, 100% { transform: none; opacity: 0.1; }
+  10%      { transform: translateX(-2px); opacity: 0.3; }
+  20%      { transform: translateX(-1px); opacity: 0.2; }
+  30%      { transform: translateX(-3px); opacity: 0.4; }
+  50%      { transform: translateX(-1px); opacity: 0.3; }
+}
+
+@keyframes glitchRight {
+  0%, 100% { transform: none; opacity: 0.1; }
+  10%      { transform: translateX(2px); opacity: 0.3; }
+  20%      { transform: translateX(1px); opacity: 0.2; }
+  30%      { transform: translateX(3px); opacity: 0.4; }
+  50%      { transform: translateX(1px); opacity: 0.3; }
+}
+
+@media (max-width: 576px) {
+  .glitch {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
